@@ -80,7 +80,9 @@ void Point::debug()
 {
     cout << "(" << this->m_x << "," << this->m_y << ")";
 }
+
 Point::~Point()
 {
     //dtor
 }
+
