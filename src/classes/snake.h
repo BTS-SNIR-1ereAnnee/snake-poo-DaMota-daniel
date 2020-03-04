@@ -33,7 +33,12 @@ public:
     void moveRight();
 	
 	void mangerPomme();
-
+	/**
+    *   dessine le point
+    */
+	void drawPoint();
+   
+	
 private: 
 	
 	Point Points[50];

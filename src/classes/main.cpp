@@ -5,6 +5,7 @@
 #include <iostream>
 #include "Point.h"
 #include "Board.h"
+#include "snake.h"
 
 
 using namespace std;
@@ -19,16 +20,17 @@ int main()
 
     Point p(10,4);
     Point p2(10,5);
-    
+    snake serpent(10,4);
     //cout << "press any key to quit" << endl;
     p.moveUp(); 
     p.moveRight();
     p.drawPoint();
     p2.moveLeft();
     p2.moveDown();
-    
-    cout << p2.getY();
-    p2.setY(10);
+
+
+    //cout << p2.getY();
+    //p2.setY(10);
     p2.drawPoint();	
     p.erasePoint();
 
