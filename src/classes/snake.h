@@ -31,7 +31,8 @@ public:
         Move point up
     */
     void moveRight();
-
+	
+	void mangerPomme();
 
 private: 
 	
