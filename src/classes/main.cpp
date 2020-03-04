@@ -18,10 +18,20 @@ int main()
     fenetre = Board::getInstance ();
 
     Point p(10,4);
-    p.drawPoint();
     Point p2(10,5);
-    p2.drawPoint();
+    
     //cout << "press any key to quit" << endl;
+    p.moveUp(); 
+    p.moveRight();
+    p.drawPoint();
+    p2.moveLeft();
+    p2.moveDown();
+    
+    cout << p2.getY();
+    p2.setY(10);
+    p2.drawPoint();	
+    p.erasePoint();
+
     getchar();
     fenetre->kill();
     return 0;
