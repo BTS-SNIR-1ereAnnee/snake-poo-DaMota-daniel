@@ -2,7 +2,7 @@
 #include "Point.h"
 #include "Board.h"
 
-using namespace std;
+
 
 
 class snake 
@@ -41,7 +41,7 @@ public:
 	
 private: 
 	
-	Point Points[50];
+	Point serpent[50];
 
 	int longeur = 3;
 

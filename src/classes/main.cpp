@@ -21,11 +21,34 @@ int main()
     snake serpent(10,4);
 
 	
-	serpent.moveRight();
 
-	serpent.drawPoint();	
+	serpent.mangerPomme();
+	keypad (stdscr,true);
+	noecho();
+	while (getch() != 27)
+	{
 
+		switch (getch()){
+			case 259:
+				
+				serpent.moveUp();
+				break;	
+			case 260:
+				serpent.moveLeft();
+				break;	
+			case 258:
+				serpent.moveDown();
+				break;
+
+			case 261:
+				serpent.moveRight();
+				break;		
+		}
+
+		serpent.drawPoint();
+	
+	}
     getchar();
     fenetre->kill();
     return 0;
-}
+};
