@@ -6,9 +6,35 @@
 #include "Point.h"
 #include "Board.h"
 #include "snake.h"
-
+#include <unistd.h>
 
 using namespace std;
+
+//https://github.com/ajpaulson/learning-ncurses/blob/master/kbhit.c
+
+int kbhit(void)    /* comment */
+{
+    int ch, r;
+
+    // turn off getch() blocking and echo
+    nodelay(stdscr, TRUE);
+    noecho();
+
+    // check for input
+    ch = getch();
+    if( ch == ERR)      // no input
+            r = FALSE;
+    else                // input
+    {
+            r = TRUE;
+            ungetch(ch);
+    }
+
+    // restore block and echo
+    echo();
+    nodelay(stdscr, FALSE);
+    return(r);
+}
 
 int main()
 {
@@ -25,28 +51,34 @@ int main()
 	serpent.mangerPomme();
 	keypad (stdscr,true);
 	noecho();
-	while (getch() != 27)
+	while (true)
 	{
+			
+		if(kbhit()) {
+			switch (getch()){
+				case 259:
+					
+					serpent.moveUp();
+					break;	
+				case 260:
+					serpent.moveLeft();
+					break;	
+				case 258:
+					serpent.moveDown();
+					break;
 
-		switch (getch()){
-			case 259:
-				
-				serpent.moveUp();
-				break;	
-			case 260:
-				serpent.moveLeft();
-				break;	
-			case 258:
-				serpent.moveDown();
-				break;
+				case 261:
+					serpent.moveRight();
+					break;		
+			}
 
-			case 261:
-				serpent.moveRight();
-				break;		
+			serpent.drawPoint();
+		
+		}else{ //move left
+//			serpent.moveLeft();
+
 		}
 
-		serpent.drawPoint();
-	
 	}
     getchar();
     fenetre->kill();
