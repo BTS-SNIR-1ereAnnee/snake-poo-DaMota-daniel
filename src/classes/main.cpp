@@ -18,21 +18,12 @@ int main()
     // initialisation des pointeurs
     fenetre = Board::getInstance ();
 
-    Point p(10,4);
-    Point p2(10,5);
     snake serpent(10,4);
-    //cout << "press any key to quit" << endl;
-    p.moveUp(); 
-    p.moveRight();
-    p.drawPoint();
-    p2.moveLeft();
-    p2.moveDown();
 
+	
+	//serpent.moveRight();
 
-    //cout << p2.getY();
-    //p2.setY(10);
-    p2.drawPoint();	
-    p.erasePoint();
+	serpent.drawPoint();	
 
     getchar();
     fenetre->kill();

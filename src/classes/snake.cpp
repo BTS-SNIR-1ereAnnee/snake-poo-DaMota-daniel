@@ -77,3 +77,15 @@ void snake::mangerPomme()
 	longeur = longeur + 1;
 }
 
+void snake::drawPoint(){
+
+
+	for(int d = 0; d < longeur; d++)
+	{
+		Points[d].drawPoint();
+		
+	} 
+
+}
+
+
