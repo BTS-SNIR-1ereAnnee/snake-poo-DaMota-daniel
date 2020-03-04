@@ -21,7 +21,7 @@ int main()
     snake serpent(10,4);
 
 	
-	//serpent.moveRight();
+	serpent.moveRight();
 
 	serpent.drawPoint();	
 

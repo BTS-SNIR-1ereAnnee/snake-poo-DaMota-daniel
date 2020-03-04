@@ -30,46 +30,50 @@ snake::snake(int x,int y)
 
 void snake::moveDown()
 {
-	Points[0].moveDown();
 	
- 	for(int d = 1; d < longeur; d++)
+	
+ 	for(int d = 0; d < longeur-1; d++)
 	{
-		Points[d]= Points[d-1];
+		Points[d]= Points[d+1];
 		
 	} 
+    Points[longeur-1].moveDown();
 }
 
 void snake::moveUp()
 {
 	
-    Points[0].moveUp();
+    
 	
- 	for(int d = 1; d < longeur; d++)
+ 	for(int d = 0; d < longeur-1; d++)
 	{
-		Points[d]= Points[d-1];
+		Points[d]= Points[d+1];
 		
-	} 
+	}
+	Points[longeur-1].moveUp();
 }
 
 void snake::moveRight()
 {
-   Points[0].moveRight();
+   
 	
- 	for(int d = 1; d < longeur; d++)
+ 	for(int d = 0; d < longeur-1; d++)
 	{
-		Points[d]= Points[d-1];
+		Points[d]= Points[d+1];
 		
 	} 
+	Points[longeur-1].moveRight();
 }
 void snake::moveLeft()
 {
-    Points[0].moveLeft();
+    
 	
- 	for(int d = 1; d < longeur; d++)
+ 	for(int d = 0; d < longeur-1; d++)
 	{
-		Points[d]= Points[d-1];
+		Points[d]= Points[d+1];
 		
-	} 
+	}
+	Points[longeur-1].moveLeft(); 
 }
 
 void snake::mangerPomme()
@@ -84,7 +88,7 @@ void snake::drawPoint(){
 	{
 		Points[d].drawPoint();
 		
-	} 
+	}
 
 }
 
