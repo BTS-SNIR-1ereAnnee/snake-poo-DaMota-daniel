@@ -18,7 +18,7 @@ int kbhit(void)    /* comment */
 
     // turn off getch() blocking and echo
     nodelay(stdscr, TRUE);
-    noecho();
+    //noecho();
 
     // check for input
     ch = getch();
@@ -48,13 +48,13 @@ int main()
 
 	
 
-	serpent.mangerPomme();
-	keypad (stdscr,true);
-	noecho();
-	while (true)
+	//serpent.mangerPomme();
+	//keypad (stdscr,true);
+	//noecho();
+	/*while (true)
 	{
 			
-		if(kbhit()) {
+		//if(kbhit()) {
 			switch (getch()){
 				case 259:
 					
@@ -72,15 +72,15 @@ int main()
 					break;		
 			}
 
-			serpent.drawPoint();
+			serpent.affichSerpent();*/
 		
-		}else{ //move left
+		//}else{ //move left
 //			serpent.moveLeft();
 
-		}
+		//}
 
 	}
-    getchar();
+    //getchar();
     fenetre->kill();
     return 0;
 };

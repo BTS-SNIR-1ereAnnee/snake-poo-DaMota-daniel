@@ -8,11 +8,13 @@ using namespace std;
 Point::Point()
 {
     m_x = m_y = 10;
+	cout<<"quelque chose"<< endl;
 }
 Point::Point(int x, int y)
 {
     this->m_x = x;
     this->m_y = y;
+	cout<<"quelque chose"<< endl;
 }
 
 void Point::setPoint(int x, int y)

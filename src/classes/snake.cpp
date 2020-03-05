@@ -85,7 +85,7 @@ void snake::mangerPomme()
 	longeur = longeur + 1;
 }
 
-void snake::drawPoint(){
+void snake::affichSerpent(){
 
 
 	for(int d = 0; d < longeur; d++)
@@ -96,4 +96,8 @@ void snake::drawPoint(){
 
 }
 
+void snake::changerDirection()
+{
+
+}
 

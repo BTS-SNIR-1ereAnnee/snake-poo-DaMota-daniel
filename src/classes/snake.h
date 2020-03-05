@@ -15,28 +15,15 @@ public:
 // constucteur 
 
 	snake (int x, int y);
-/**
-        Move point up
-    */
-    void moveUp();
-    /**
-        Move point down
-    */
-    void moveDown();
-    /**
-        Move point left
-    */
-    void moveLeft();
-    /**
-        Move point up
-    */
-    void moveRight();
+
+    void changerDirection(int direction);
+ 
 	
 	void mangerPomme();
 	/**
     *   dessine le point
     */
-	void drawPoint();
+	void affichSerpent();
    
 	
 private: 
