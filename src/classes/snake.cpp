@@ -47,28 +47,29 @@ void snake::affichSerpent(){
 
 void snake::move(int direction)
 {
-    for(int d = 0; d < longeur-1; d++)
+    for(int d = longeur; d > 0 ; d--)
 	{
 	    serpent[d].erasePoint();
-		serpent[d]= serpent[d+1];
+		serpent[d] = serpent[d-1];
 		
 	} 
+	
     if(direction == 1)
     {
-        serpent[longeur-1].moveUp();
+        serpent[0].moveUp();
     }
     
     else if(direction == 2)
     {
-        serpent[longeur-1].moveDown();
+        serpent[0].moveDown();
     }
     else if(direction == 3)
     {
-        serpent[longeur-1].moveLeft();
+        serpent[0].moveLeft();
     }
      else if(direction == 4)
     {
-        serpent[longeur-1].moveRight();
+        serpent[0].moveRight();
     }
 
 }
