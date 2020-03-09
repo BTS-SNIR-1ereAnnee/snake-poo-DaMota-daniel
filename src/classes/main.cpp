@@ -8,9 +8,16 @@
 #include "snake.h"
 #include <unistd.h>
 
+int usleep(useconds_t usec);
+
 using namespace std;
 
 //https://github.com/ajpaulson/learning-ncurses/blob/master/kbhit.c
+
+#define  TOUCHE_KEY_UP 1
+#define  TOUCHE_KEY_DOWN 2
+#define  TOUCHE_KEY_LEFT 3
+#define  TOUCHE_KEY_RIGHT 4
 
 int kbhit(void)    /* comment */
 {
@@ -38,7 +45,8 @@ int kbhit(void)    /* comment */
 
 int main()
 {
-
+    int derniereDir=TOUCHE_KEY_DOWN;
+    
     // pointeurs sur l'unique instance de la classe UniqueObject
     Board *fenetre;
     // initialisation des pointeurs
@@ -48,37 +56,41 @@ int main()
 
 	
 
-	//serpent.mangerPomme();
-	//keypad (stdscr,true);
-	//noecho();
-	/*while (true)
+	serpent.mangerPomme();
+	keypad (stdscr,true);
+	noecho();
+	while (true)
 	{
 			
-		//if(kbhit()) {
+		if(kbhit()) {
 			switch (getch()){
 				case 259:
-					
-					serpent.moveUp();
+					derniereDir = TOUCHE_KEY_UP;
+					serpent.move(TOUCHE_KEY_UP);
 					break;	
 				case 260:
-					serpent.moveLeft();
+					derniereDir = TOUCHE_KEY_LEFT;
+					serpent.move(TOUCHE_KEY_LEFT);
 					break;	
 				case 258:
-					serpent.moveDown();
+				    derniereDir = TOUCHE_KEY_DOWN;
+					serpent.move(TOUCHE_KEY_DOWN);
 					break;
-
 				case 261:
-					serpent.moveRight();
+				    derniereDir = TOUCHE_KEY_RIGHT;
+					serpent.move(TOUCHE_KEY_RIGHT);
 					break;		
 			}
 
-			serpent.affichSerpent();*/
-		
-		//}else{ //move left
-//			serpent.moveLeft();
+			
+		    
+		}else{ //move left
+		    serpent.move (derniereDir);	
 
-		//}
-
+		}
+		serpent.affichSerpent();
+        usleep (150000);
+        
 	}
     //getchar();
     fenetre->kill();

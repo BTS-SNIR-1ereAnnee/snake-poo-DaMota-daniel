@@ -28,57 +28,6 @@ snake::snake(int x,int y)
 
 }
 
-void snake::moveDown()
-{
-	
-	
- 	for(int d = 0; d < longeur-1; d++)
-	{
-	    serpent[d].erasePoint();
-		serpent[d]= serpent[d+1];
-		
-	} 
-    serpent[longeur-1].moveDown();
-}
-
-void snake::moveUp()
-{
-	
-    
-	
- 	for(int d = 0; d < longeur-1; d++)
-	{
-	    serpent[d].erasePoint();
-		serpent[d]= serpent[d+1];
-		
-	}
-	serpent[longeur-1].moveUp();
-}
-
-void snake::moveRight()
-{
-   
-	
- 	for(int d = 0; d < longeur-1; d++)
-	{
-	    serpent[d].erasePoint();
-		serpent[d]= serpent[d+1];
-		
-	} 
-	serpent[longeur-1].moveRight();
-}
-void snake::moveLeft()
-{
-    
-	
- 	for(int d = 0; d < longeur-1; d++)
-	{
-	    serpent[d].erasePoint();
-		serpent[d]= serpent[d+1];
-		
-	}
-	serpent[longeur-1].moveLeft(); 
-}
 
 void snake::mangerPomme()
 {
@@ -96,8 +45,31 @@ void snake::affichSerpent(){
 
 }
 
-void snake::changerDirection()
+void snake::move(int direction)
 {
+    for(int d = 0; d < longeur-1; d++)
+	{
+	    serpent[d].erasePoint();
+		serpent[d]= serpent[d+1];
+		
+	} 
+    if(direction == 1)
+    {
+        serpent[longeur-1].moveUp();
+    }
+    
+    else if(direction == 2)
+    {
+        serpent[longeur-1].moveDown();
+    }
+    else if(direction == 3)
+    {
+        serpent[longeur-1].moveLeft();
+    }
+     else if(direction == 4)
+    {
+        serpent[longeur-1].moveRight();
+    }
 
 }
 

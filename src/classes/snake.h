@@ -16,7 +16,7 @@ public:
 
 	snake (int x, int y);
 
-    void changerDirection(int direction);
+    void move(int direction);
  
 	
 	void mangerPomme();
