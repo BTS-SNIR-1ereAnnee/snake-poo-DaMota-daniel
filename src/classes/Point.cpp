@@ -67,14 +67,14 @@ void Point::setY(int val)
 void Point::drawPoint()
 {
     Board *b;
-    b = Board::getInstance();
+    b = Board::getInstance(); // dessine les points 
     b->dessinerPoint(*this);
 }
 
-void Point::erasePoint()
+void Point::erasePoint()  
 {
     Board *b;
-    b = Board::getInstance();
+    b = Board::getInstance(); //efface les points 
     b->effacerPoint(*this);
 }
 

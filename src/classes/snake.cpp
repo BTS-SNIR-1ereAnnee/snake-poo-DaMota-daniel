@@ -5,7 +5,7 @@
 
 
 using namespace std ;
-
+//Constructeur par défault
 snake::snake()
 {
 
@@ -28,12 +28,13 @@ snake::snake(int x,int y)
 
 }
 
-
+// Fonctione ajoute un point dans le tableau serpent 
 void snake::mangerPomme()
 {
 	longeur = longeur + 1;
+	serpent[longeur].setPoint( serpent[longeur-1].getX() , serpent[longeur-1].getY()  );
 }
-
+// afficher le serpent
 void snake::affichSerpent(){
 
 
@@ -44,7 +45,7 @@ void snake::affichSerpent(){
 	}
 
 }
-
+// fonction de mouvement pour le serpent 
 void snake::move(int direction)
 {
     for(int d = longeur; d > 0 ; d--)

@@ -14,30 +14,30 @@ using namespace std;
 
 //https://github.com/ajpaulson/learning-ncurses/blob/master/kbhit.c
 
-#define  TOUCHE_KEY_UP 1
+#define  TOUCHE_KEY_UP 1 // sert a définir les touche de mouvement 
 #define  TOUCHE_KEY_DOWN 2
 #define  TOUCHE_KEY_LEFT 3
 #define  TOUCHE_KEY_RIGHT 4
 
-int kbhit(void)    /* comment */
+int kbhit(void)    /* Cette fonction retourne si une touche est appuyé par l'utilisateur https://github.com/ajpaulson/learning-ncurses/blob/master/kbhit.c */
 {
     int ch, r;
 
-    // turn off getch() blocking and echo
+    
     nodelay(stdscr, TRUE);
-    //noecho();
+   
 
-    // check for input
+    
     ch = getch();
-    if( ch == ERR)      // no input
+    if( ch == ERR)     
             r = FALSE;
-    else                // input
+    else                
     {
             r = TRUE;
             ungetch(ch);
     }
 
-    // restore block and echo
+    
     echo();
     nodelay(stdscr, FALSE);
     return(r);
@@ -72,7 +72,7 @@ int main()
 					derniereDir = TOUCHE_KEY_LEFT;
 					serpent.move(TOUCHE_KEY_LEFT);
 					break;	
-				case 258:
+				case 258:                                  
 				    derniereDir = TOUCHE_KEY_DOWN;
 					serpent.move(TOUCHE_KEY_DOWN);
 					break;

@@ -16,7 +16,7 @@ public:
 
 	snake (int x, int y);
 
-    void move(int direction);
+    void move(int direction); // déplacement du serpent
  
 	
 	void mangerPomme();
@@ -28,8 +28,8 @@ public:
 	
 private: 
 	
-	Point serpent[50];
+	Point serpent[50]; //point du serpent
 
-	int longeur = 3;
+	int longeur = 3; // longeur du serpent 
 
 };
